@@ -49,4 +49,11 @@ describe('CLI Suggestion', function() {
     done(0);
   });
 
+  it('should return false if no suggestion found', function(done) {
+    var doSuggestion = suggestion();
+
+    expect(doSuggestion('nosuggestion')).toEqual(false);
+    done(0);
+  });
+
 });
