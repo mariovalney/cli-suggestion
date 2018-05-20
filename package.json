@@ -1,6 +1,6 @@
 {
   "name": "cli-suggestion",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Just a module to return a suggestion based on input",
   "homepage": "https://github.com/mariovalney/cli-suggestion#readme",
   "author": "Mário Valney <mariovlaney@gmail.com>",
