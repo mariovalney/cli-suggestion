@@ -1,0 +1,29 @@
+{
+  "name": "cli-suggestion",
+  "version": "0.0.1",
+  "description": "Just a module to return a suggestion based on input",
+  "homepage": "https://github.com/mariovalney/cli-suggestion#readme",
+  "author": "Mário Valney <mariovlaney@gmail.com>",
+  "contributors": [
+    "Mário Valney <mariovalney@gmail.com>"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive",
+    "cover": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "coveralls": "nyc --reporter=text-lcov npm test | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariovalney/cli-suggestion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mariovalney/cli-suggestion/issues"
+  },
+  "keywords": [
+    "cli",
+    "suggestion",
+    "cli-suggestion"
+  ]
+}
