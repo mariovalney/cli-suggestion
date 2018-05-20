@@ -1,7 +1,9 @@
 # CLI Suggestion
 
 [![NPM version][npm-image]][npm-url]
+
 [![Build Status][travis-image]][travis-url]
+
 [![Coveralls Status][coveralls-image]][coveralls-url]
 
 It's just a simple module to return a command suggestion based on a try.
@@ -36,26 +38,36 @@ var return = doSuggestion('test'); // Just the string, do not pass your app/comm
 
 ## Options
 
+
 ### command | `default: a empty string`
+
 
 String | Your command. To be added before suggestion:
 
+
 > Did want to say that?
+
 >   command suggestion
+
 
 ### file | `default: suggestions.json`
 
 String | The suggestions JSON file.
+
 If it's invalid we will consider no suggestions.
+
 
 ### text | `default: Did want to say that?`
 
 String | A humman readable text before suggestion.
+
 Just like GIT.
+
 
 ## Suggestion File
 
 It's a JSON file with a array of suggestions.
+
 Each suggestion should have `command` (string) and `errors` (array of strings) properties.
 
 ```json
