@@ -1,0 +1,6 @@
+[
+  {
+    "command": "--newtest",
+    "errors": ["newtest", "newtes"]
+  }
+]

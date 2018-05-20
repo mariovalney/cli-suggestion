@@ -1,9 +1,12 @@
 'use strict';
 
+var jsonfile = require('jsonfile');
+
 function run(opts) {
   var options = {
-    text: 'Did want to say that?',
-    command: ''
+    command: '',
+    file: 'suggestions.json',
+    text: 'Did want to say that?'
   };
 
   if (typeof opts == 'string') {
@@ -16,9 +19,19 @@ function run(opts) {
     opts = {};
   }
 
-  options.text = opts.text || options.text;
   options.command = opts.command || options.command;
+  options.file = opts.file || options.file;
+  options.text = opts.text || options.text;
 
+  // Loading Suggestions
+  var suggestionsArr = jsonfile.readFileSync('./' + options.file, { throws: false });
+  if (suggestionsArr === null || typeof suggestionsArr != 'object' || ! Array.isArray(suggestionsArr)) {
+    suggestionsArr = [];
+  }
+
+  const suggestions = suggestionsArr;
+
+  // Creating Final Text
   function createSuggestion(suggestion) {
     var command = options.command;
     if (options.command) command += ' ';
@@ -26,23 +39,15 @@ function run(opts) {
     return options.text + "\n" + '    ' + command + suggestion;
   }
 
-  function createSuggestionArray(suggestion, tries) {
-    return {
-      suggestion: suggestion,
-      tries: tries
-    };
-  }
-
+  // The Method
   function doSuggestion(command) {
-    const suggestions = [
-      createSuggestionArray('--test', [ 'test' ])
-    ];
-
     for (var i = 0; i < suggestions.length; i++) {
-      for(var j = 0; j < suggestions[i].tries.length; j++) {
-        if (suggestions[i].tries[j] != command) continue;
+      var errors = suggestions[i].errors || [];
 
-        return createSuggestion(suggestions[i].suggestion);
+      for(var j = 0; j < errors.length; j++) {
+        if (errors[j] != command) continue;
+
+        return createSuggestion(suggestions[i].command);
       }
     }
 

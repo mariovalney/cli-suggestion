@@ -1,0 +1,10 @@
+[
+  {
+    "command": "--suggestionok",
+    "errors": ["suggestionok"]
+  },
+  {
+    "command": "--suggestionwitherror",
+    "has_no_errors_property": ["suggestionwitherror"]
+  }
+]
