@@ -25,5 +25,14 @@
     "cli",
     "suggestion",
     "cli-suggestion"
-  ]
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.1",
+    "expect": "^22.4.3",
+    "istanbul": "^0.4.5",
+    "istanbul-coveralls": "^1.0.3",
+    "mocha": "^5.1.1",
+    "nyc": "^11.8.0",
+    "pre-commit": "^1.2.2"
+  }
 }
